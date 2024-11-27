@@ -1,0 +1,15 @@
+services:
+  dev:
+    container_name: linux-in-practice-2nd
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/workspace
+    privileged: true  # KVMを使用するために必要
+    working_dir: /workspace
+    tty: true
+
+networks:
+  default:
+    driver: bridge
